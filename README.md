@@ -27,13 +27,17 @@ pip install -r requirements.txt
 python manage.py migrate
 ```
 
-## 서버 실행
+## 관리자 계정 생성
+```bash
+python manage.py createsuperuser
+```
 
+## 서버 실행
 ```bash
 python manage.py runserver
 ```
 
-## 브러우저 
+## 브라우저 
 관리자 접속 후 권한 획득 이후 "+" 버튼이 우 상단에 보여짐
 
 관리자[http://127.0.0.1:8000/admin/]
