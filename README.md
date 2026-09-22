@@ -10,7 +10,8 @@ Django 프로젝트를 위한 가상환경 생성
 mkdir web-blog
 cd mysite
 python3 -m venv ./venv
-source ./venv/bin/activate
+source ./venv/bin/activate # for linux or macos
+
 ```
 실행 후 프로프트 확인 필요
 ```
@@ -43,3 +44,5 @@ python manage.py runserver
 관리자[http://127.0.0.1:8000/admin/]
 
 사용자[http://127.0.0.1:8000/]
+
+Api Root[http://127.0.0.1:8000/api_root/]
