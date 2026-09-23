@@ -11,8 +11,15 @@ mkdir web-blog
 cd mysite
 python3 -m venv ./venv
 source ./venv/bin/activate # for linux or macos
-
+./venv/bin/activate.ps1 # for windows PowerShell
+./venv/bin/activate.bat # for windows CMD
 ```
+
+MS Windows PowerShell을 사용 할 경우, 실행 정책 보호를 해제 하기위해 PowerShell을 관리자모드로 실행하여 아래를 실행합니다.
+```bash
+Set-ExecutionPolicy Unrestricted
+```
+
 실행 후 프로프트 확인 필요
 ```
 (venv)$
@@ -46,3 +53,19 @@ python manage.py runserver
 사용자[http://127.0.0.1:8000/]
 
 Api Root[http://127.0.0.1:8000/api_root/]
+
+
+## telnet 테스트
+
+```bash
+telnet 127.0.0.1 8000
+```
+
+아래 "Host"의 경우 ".mysite/settings.py"파일 내 "ALLOWED_HOSTS"에 등록되지 않은 호스트는 http 400 error 응답 함 
+```
+GET /media/images/pig.png HTTP/1.1
+Host: 127.0.0.1
+User-Agent: Mozilla/5.0
+
+
+```
